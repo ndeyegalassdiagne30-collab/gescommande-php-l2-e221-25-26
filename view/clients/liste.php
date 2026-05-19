@@ -20,9 +20,9 @@
           <a href="../index.html" class="text-xl font-bold text-indigo-600">📦 GES-COMMANDE</a>
           <div class="hidden sm:flex space-x-4">
             <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-100">Dashboard</a>
-            <a href="liste.html" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-600 bg-indigo-50">Clients</a>
-            <a href="../produits/liste.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-100">Produits</a>
-            <a href="../commandes/liste.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-100">Commandes</a>
+            <a href="<?=path("client","liste")?>" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-600 bg-indigo-50">Clients</a>
+            <a href="<?=path("produit","liste")?>" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-100">Produits</a>
+            <a href="<?=path("commande","liste")?>" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-100">Commandes</a>
           </div>
         </div>
       </div>
@@ -35,7 +35,7 @@
       <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Clients</h2>
       <p class="mt-1 text-sm text-gray-500">Gérez votre carnet d'adresses clients.</p>
     </div>
-    <a href="formulaire.html" class="mt-4 sm:mt-0 inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition shadow-sm">
+    <a href="<?=path("client","ajout")?>" class="mt-4 sm:mt-0 inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition shadow-sm">
       + Ajouter un client
     </a>
   </header>
@@ -64,7 +64,7 @@
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600"><?=$client["telephone"]?></td>
               <td class="px-6 py-4 text-sm text-gray-600 max-w-xs truncate"><?=$client["adresse"]?></td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
-                <a href="formulaire.html?id=1" class="inline-flex items-center px-3 py-1.5 bg-indigo-50 text-indigo-700 rounded-md hover:bg-indigo-100 text-xs font-medium">Modifier</a>
+                <a href="<?=path("client","ajout")."&id=".$client["id_client"]?>" class="inline-flex items-center px-3 py-1.5 bg-indigo-50 text-indigo-700 rounded-md hover:bg-indigo-100 text-xs font-medium">Modifier</a>
                 <a href="#modal-1" class="inline-flex items-center px-3 py-1.5 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-xs font-medium">Supprimer</a>
               </td>
             </tr>

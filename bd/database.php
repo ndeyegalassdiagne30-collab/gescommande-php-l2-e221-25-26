@@ -1,6 +1,6 @@
 <?php
+
 function openConnexion() {
-function openConnection() {
     $con = null;
 try
 {
@@ -52,22 +52,4 @@ function executeUpdate(string $sql,array $data){
         $statement = $conn->prepare($sql);
         $statement->execute($data);
    closeConnexion($conn);
-return $con;
-}
-
-function closeConnection($con){
-    $con=null;
-}
-
-function excuteSelect($sql,$one=false){
-      $datas=null;
-    $pdo=openConnection();
-   $stm= $pdo->query($sql);
-    $datas= $stm->fetchAll();
-    closeConnection($pdo);
-    return  $datas;
-    
-}
-function excuteUpdate($sql){
-
 }

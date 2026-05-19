@@ -2,8 +2,8 @@
 require_once ROOT."/model/commandeModel.php";
 $liste=function(){
 $commandes = getAllcommandes();
-
 require_once(ROOT."view/commandes/liste.php");
+
 };
 
 $ajout=function(){
