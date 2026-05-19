@@ -2,16 +2,17 @@
 require_once ROOT."/model/commandeModel.php";
 $liste=function(){
 $commandes = getAllcommandes();
-require_once(ROOT."view/commandes/liste.php");
+$total_commandes=countTable("commande");
+loadView("commandes/liste",["commandes"=>$commandes,"total_commandes"=>$total_commandes]);
 
 };
 
 $ajout=function(){
-echo "je ajoute un commande";
+loadView("commandes/ajout",[], "side");
 };
 
 $detail=function(){
-echo "je detail un commande";
+loadView("commandes/detail");
 };
 
 $modifier=function(){

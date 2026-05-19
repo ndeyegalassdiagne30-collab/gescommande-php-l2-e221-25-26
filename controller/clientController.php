@@ -2,12 +2,12 @@
 require_once ROOT."/model/clientModel.php";
 $liste=function(){
 $clients = getAllclients();
-$total_clients= countTable("client");
-    loadView("clients/liste",["clients"=>$clients,"total_client"=>$total_clients]);
+$total_client= countTable("client");
+loadView("clients/liste",["clients"=>$clients,"total_client"=>$total_client]);
 };
 
 $ajout=function(){
-loadView("clients/ajout");
+loadView("clients/ajout",[],"side");
 };
 
 $detail=function(){

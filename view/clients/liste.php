@@ -1,34 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestion de Commandes — Clients</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .modal { display: none !important; }
-    .modal:target { display: flex !important; }
-  </style>
-</head>
-<body class="bg-gray-50 font-sans antialiased">
-
-  <!-- Navigation -->
-  <nav class="bg-white shadow-sm border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <div class="flex items-center space-x-8">
-          <a href="../index.html" class="text-xl font-bold text-indigo-600">📦 GES-COMMANDE</a>
-          <div class="hidden sm:flex space-x-4">
-            <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-100">Dashboard</a>
-            <a href="<?=path("client","liste")?>" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-600 bg-indigo-50">Clients</a>
-            <a href="<?=path("produit","liste")?>" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-100">Produits</a>
-            <a href="<?=path("commande","liste")?>" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-100">Commandes</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-
   <!-- En-tête -->
   <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between">
     <div>
@@ -73,62 +42,18 @@
           </tbody>
         </table>
       </div>
-      <div class="p-4 text-sm text-gray-500 text-center border-t border-gray-100">5 clients</div>
+      <div class="p-4 text-sm text-gray-500 text-center border-t border-gray-100"><?=$total_client?> clients</div>
     </div>
   </section>
 
   <!-- Modales de suppression (CSS :target) -->
-  <div id="modal-1" class="modal fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4">
+  <!-- <div id="modal-1" class="modal fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4">
     <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-6">
       <h3 class="text-lg font-bold text-gray-900">Confirmer la suppression</h3>
       <p class="mt-2 text-sm text-gray-600">Êtes-vous sûr de vouloir supprimer "Dupont" ? Cette action est irréversible.</p>
       <div class="mt-6 flex justify-end space-x-3">
         <a href="#" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition">Annuler</a>
-        <!-- TODO: Remplacer href par une action PHP -->
-        <a href="?action=supprimer&id=1" class="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 transition">Supprimer</a>
+        <a href="" class="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 transition">Supprimer</a>
       </div>
     </div>
-  </div>
-  <div id="modal-2" class="modal fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4">
-    <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-6">
-      <h3 class="text-lg font-bold text-gray-900">Confirmer la suppression</h3>
-      <p class="mt-2 text-sm text-gray-600">Êtes-vous sûr de vouloir supprimer "Martin" ? Cette action est irréversible.</p>
-      <div class="mt-6 flex justify-end space-x-3">
-        <a href="#" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition">Annuler</a>
-        <a href="?action=supprimer&id=2" class="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 transition">Supprimer</a>
-      </div>
-    </div>
-  </div>
-  <div id="modal-3" class="modal fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4">
-    <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-6">
-      <h3 class="text-lg font-bold text-gray-900">Confirmer la suppression</h3>
-      <p class="mt-2 text-sm text-gray-600">Êtes-vous sûr de vouloir supprimer "Bernard" ? Cette action est irréversible.</p>
-      <div class="mt-6 flex justify-end space-x-3">
-        <a href="#" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition">Annuler</a>
-        <a href="?action=supprimer&id=3" class="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 transition">Supprimer</a>
-      </div>
-    </div>
-  </div>
-  <div id="modal-4" class="modal fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4">
-    <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-6">
-      <h3 class="text-lg font-bold text-gray-900">Confirmer la suppression</h3>
-      <p class="mt-2 text-sm text-gray-600">Êtes-vous sûr de vouloir supprimer "Petit" ? Cette action est irréversible.</p>
-      <div class="mt-6 flex justify-end space-x-3">
-        <a href="#" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition">Annuler</a>
-        <a href="?action=supprimer&id=4" class="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 transition">Supprimer</a>
-      </div>
-    </div>
-  </div>
-  <div id="modal-5" class="modal fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4">
-    <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-6">
-      <h3 class="text-lg font-bold text-gray-900">Confirmer la suppression</h3>
-      <p class="mt-2 text-sm text-gray-600">Êtes-vous sûr de vouloir supprimer "Durand" ? Cette action est irréversible.</p>
-      <div class="mt-6 flex justify-end space-x-3">
-        <a href="#" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition">Annuler</a>
-        <a href="?action=supprimer&id=5" class="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 transition">Supprimer</a>
-      </div>
-    </div>
-  </div>
-
-</body>
-</html>
+  </div> -->
