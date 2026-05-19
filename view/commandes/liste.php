@@ -20,9 +20,9 @@
           <a href="../index.html" class="text-xl font-bold text-indigo-600">📦 GES-COMMANDE</a>
           <div class="hidden sm:flex space-x-4">
             <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-100">Dashboard</a>
-            <a href="../clients/liste.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-100">Clients</a>
-            <a href="../produits/liste.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-100">Produits</a>
-            <a href="liste.html" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-600 bg-indigo-50">Commandes</a>
+            <a href="<?=WEBROOT."?controller=client&action=liste"?>" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-600 bg-indigo-50">Clients</a>
+            <a href="<?=WEBROOT."?controller=produit&action=liste"?>" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-100">Produits</a>
+            <a href="<?=WEBROOT."?controller=commande&action=liste"?>" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-100">Commandes</a>
           </div>
         </div>
       </div>
