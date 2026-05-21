@@ -1,5 +1,6 @@
 <?php
 require_once ROOT."/model/dashboardModel.php";
+auth();
 $total_clients=countTable("client");
 $total_commandes=countTable("commande");
 $total_produits=countTable("produit");

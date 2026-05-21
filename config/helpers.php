@@ -28,3 +28,17 @@ function countTable(string $table){
     $sql="SELECT COUNT(*) as total FROM $table";
    return executeSelect($sql,[],true)["total"];
 }
+
+function isConnected(){
+    return isset($_SESSION["user"]);
+}
+
+function auth(){
+    if (!isConnected()) {
+        redirectTo("auth","login");
+    }
+}
+
+function hasRole(string $role){
+    return $_SESSION["user"]["role"]==$role;
+}

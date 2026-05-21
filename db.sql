@@ -77,6 +77,19 @@ CREATE TABLE produit_commande (
 );
 
 -- =====================================================
+-- TABLE utilisateur
+-- =====================================================
+
+CREATE TABLE utilisateur (
+    id_utilisateur INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE,
+    mdp VARCHAR(255) NOT NULL,
+    role ENUM('ADMIN', 'CLIENT')
+);
+
+-- =====================================================
 -- INSERTION DES CLIENTS
 -- =====================================================
 
@@ -131,6 +144,15 @@ VALUES
 
 (4, 1, 1, 450000),
 (4, 5, 1, 95000);
+
+-- =====================================================
+-- INSERTION DES UTILISATEURS
+-- =====================================================
+INSERT INTO utilisateur (nom, prenom, email, mdp, role)
+VALUES
+('Diop', 'Moussa', 'moussa@gmail.com', 'passer123', 'ADMIN'),
+('Fall', 'Awa', 'awa@gmail.com', 'passer123', 'CLIENT');
+
 
 -- =====================================================
 -- REQUETES DE VERIFICATION

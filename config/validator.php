@@ -22,3 +22,4 @@ function isMail($value){
 function validate(array $errors):bool{
     return count($errors)==0;
 }
+

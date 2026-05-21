@@ -1,6 +1,4 @@
- <?php
-  var_dump($errors);
-  ?>
+
 
   <!-- En-tête -->
   <header class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
@@ -20,6 +18,7 @@
           <input type="text" name="nom" id="nom" 
                  class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
                  placeholder="Fall">
+                 <span class="text-red-800"> <?=$errors["nom"] ?? "" ?></span>
         </div>
        <!-- Prenom -->
         <div>
@@ -27,6 +26,7 @@
           <input type="text" name="prenom" id="prenom" 
                  class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
                  placeholder="Fall">
+                 <span class="text-red-800"> <?=$errors["prenom"] ?? "" ?></span>
         </div>
 
         <!-- Email -->
@@ -35,6 +35,7 @@
           <input type="email" name="email" id="email" 
                  class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
                  placeholder="exemple@email.com">
+                 <span class="text-red-800"> <?=$errors["email"] ?? "" ?></span>
         </div>
 
         <!-- Téléphone -->
@@ -43,6 +44,7 @@
           <input type="tel" name="telephone" id="telephone"
                  class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
                  placeholder="06 12 34 56 78">
+                 <span class="text-red-800"> <?=$errors["telephone"] ?? "" ?></span>
         </div>
 
         <!-- Adresse -->
@@ -51,6 +53,8 @@
           <textarea name="adresse" id="adresse" rows="2"
                     class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition resize-none"
                     placeholder="12 Rue de Paris, 75001 Paris"></textarea>
+                  <span class="text-red-800"> <?=$errors["adresse"] ?? "" ?></span>
+
         </div>
       </div>
     <input type="hidden" name="controller" value="client">

@@ -1,5 +1,6 @@
 <?php
 require_once ROOT."/model/commandeModel.php";
+auth();
 $liste=function(){
 $commandes = getAllcommandes();
 $total_commandes=countTable("commande");

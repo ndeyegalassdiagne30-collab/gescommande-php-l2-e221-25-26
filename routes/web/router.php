@@ -8,7 +8,7 @@ $controllers=[
 
 ];
 
- $controller=$_REQUEST["controller"]??"dashboard";
+ $controller=$_REQUEST["controller"]??"auth";
  
  if (array_key_exists($controller, $controllers)) {
      $path=ROOT."controller/".$controllers[$controller]."Controller.php";

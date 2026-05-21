@@ -1,5 +1,6 @@
 <?php
 require_once ROOT."/model/clientModel.php";
+auth();
 $liste=function(){
 $clients = getAllclients();
 $total_client= countTable("client");
